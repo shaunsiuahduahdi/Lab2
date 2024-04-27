@@ -6,7 +6,13 @@ def calculate_bmi(height, weight):
     print ("BMI =" + str(bmi))
 
 
-    if (bmi > 18.5):
-        print ("Overweight")
+    if (bmi < 18.5):
+        print ("Underweight")
 
-calculate_bmi(weight=58, height=1.64)
+    elif(18.5<bmi<25):
+        print ("Acceptable")
+
+    else:
+        print ("lose some weight")
+    
+calculate_bmi(weight=100, height=1.30)
