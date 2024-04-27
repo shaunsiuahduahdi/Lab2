@@ -36,6 +36,7 @@ def calc_min_max_temperature():
             tempMax = int(nummm)
     print("Minimum Temp is: " + str(tempMin))
     print("Maximum Temp is: " + str(tempMax))
+    return(tempMin, tempMax)
 
 display_main_menu()
 temp_list=get_user_input()
