@@ -4,43 +4,28 @@ def display_main_menu():
         print ("Enter some numbers separated by commas (e.g. 5, 67, 32)")
 
 
+
 def get_user_input():
    y = input()
    numlist=y.split(",")
    numlist=[float(y) for y in numlist]
-   
    print (numlist)
 
    return numlist
 
-def calc_average_temperature():
+def calc_average_temperature(numlist):
+     average = sum(numlist)/len(numlist)
+     print(average)
+     return average
 
+def calc_min_max_temperature(numlist):
+    min_max = [min(numlist), max(numlist)]
+    print(min_max)
+    return min_max
     
-    temp_sum=sum(temp_list)
-    temp_count=len(temp_list)
-    temp_avg=temp_sum/temp_count
-    print(temp_avg)
-    return(temp_avg)
-
-
-
-def calc_min_max_temperature():
-    tempMin = float('inf')
-    for numm in temp_list:
-        if (numm < tempMin):
-            tempMin = int(numm)
     
-    tempMax = float('-inf')
-    for nummm in temp_list:
-        if (nummm > tempMax):
-            tempMax = int(nummm)
-    print("Minimum Temp is: " + str(tempMin))
-    print("Maximum Temp is: " + str(tempMax))
-    return(tempMin, tempMax)
 
 display_main_menu()
-temp_list=get_user_input()
-calc_average_temperature()          
-calc_min_max_temperature()
-
-
+numlist = get_user_input()
+calc_average_temperature(numlist)
+calc_min_max_temperature(numlist)
